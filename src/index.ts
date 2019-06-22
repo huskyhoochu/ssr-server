@@ -2,7 +2,7 @@ import express from 'express';
 import htmlRenderer from './htmlRenderer';
 
 export default (
-  html: string,
+  html: { html: string, preloadedState: JSON },
   paths: { buildPath: string, htmlPath: string },
   ): express.Application => {
 
