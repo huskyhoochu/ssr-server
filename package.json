@@ -1,0 +1,13 @@
+{
+  "name": "ssr-server",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -p tsconfig.server.json"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.0",
+    "express": "^4.17.1",
+    "typescript": "^3.5.1"
+  }
+}
