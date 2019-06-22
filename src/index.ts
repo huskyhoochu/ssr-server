@@ -2,7 +2,7 @@ import express from 'express';
 import htmlRenderer from './htmlRenderer';
 
 export default (
-  html: (req: express.Request) => { html: string, preloadedState: JSON },
+  html: (req: express.Request) => { helmet: any, html: string, preloadedState: JSON },
   paths: { buildPath: string, htmlPath: string },
   ): express.Application => {
 
@@ -11,6 +11,7 @@ export default (
 
   router.use('^/$', htmlRenderer(html, paths.htmlPath));
   router.use(express.static(paths.buildPath, { maxAge: '1y' }));
+  router.use('*', htmlRenderer(html, paths.htmlPath));
 
   app.use(router);
 
